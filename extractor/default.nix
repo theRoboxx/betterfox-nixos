@@ -3,7 +3,7 @@
   perl,
   ...
 }:
-writeScriptBin "arkenfox-extractor" ''
+writeScriptBin "betterfox-extractor" ''
   #!${perl}/bin/perl
 
   ${builtins.readFile ./extractor.pl}

@@ -8,13 +8,13 @@ sub generate_version {
     my ( $default, $version ) = @_;
     print "Generating v$version\n";
     my $script =
-"curl -s https://raw.githubusercontent.com/arkenfox/user.js/$version/user.js | arkenfox-extractor | jq . -S > $version.json";
+"curl -s https://raw.githubusercontent.com/yokoffing/yokoffing/BetterFox/$version/user.js | betterfox-extractor | jq . -S > $version.json";
     system $script;
     print $default
 "  \"$version\" = builtins.fromJSON (builtins.readFile ./$version.json);\n";
 }
 
-open( my $git, '-|', "git ls-remote https://github.com/arkenfox/user.js" )
+open( my $git, '-|', "git ls-remote https://github.com/yokoffing/BetterFox/user.js" )
   or die $!;
 open( my $default, '>', "default.nix" ) or die $!;
 print $default "{\n";

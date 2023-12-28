@@ -94,11 +94,11 @@
 
   upstream =
     if version == "master"
-    then "https://github.com/arkenfox/user.js"
-    else "https://github.com/arkenfox/user.js/tree/${version}";
+    then "https://github.com/yokoffing/BetterFox/user.js"
+    else "https://github.com/yokoffing/BetterFox/user.js/tree/${version}";
 in
   writeTextFile {
-    name = "arkenfox-user.js-doc.html";
+    name = "betterfox-user.js-doc.html";
     text = ''
       <!DOCTYPE html>
       <html>
@@ -106,7 +106,7 @@ in
         <link rel="stylesheet" href="${css}">
       </head>
       <body><div id="page">
-      <h1>Arkenfox <a href="${upstream}">user.js</a>
+      <h1>Betterfox<a href="${upstream}">user.js</a>
           for Firefox ${
         if version == "master"
         then ""
@@ -114,7 +114,7 @@ in
       }</h1>
 
       <p>Documentation built by
-      <a href="https://github.com/dwarfmaster/arkenfox-nixos">DwarfMaster</a>.</p>
+      <a href="https://github.com/dwarfmaster/betterfox-nixos">DwarfMaster</a>.</p>
 
       ${mapAttrsToString buildSection extracted}
       </div></body>
