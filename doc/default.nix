@@ -93,7 +93,7 @@
   '';
 
   upstream =
-    if version == "master"
+    if version == "main"
     then "https://github.com/yokoffing/BetterFox/user.js"
     else "https://github.com/yokoffing/BetterFox/user.js/tree/${version}";
 in
@@ -114,7 +114,7 @@ in
       }</h1>
 
       <p>Documentation built by
-      <a href="https://github.com/dwarfmaster/betterfox-nixos">DwarfMaster</a>.</p>
+      <a href="https://github.com/dwarfmaster/arkenfox-nixos">DwarfMaster, and forked by theRoboxx</a>.</p>
 
       ${mapAttrsToString buildSection extracted}
       </div></body>
